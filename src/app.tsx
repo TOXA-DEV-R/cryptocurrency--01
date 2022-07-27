@@ -4,13 +4,8 @@ import React, { FC } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Typography, Layout, Space } from "antd";
 import { Navbar } from "./components";
-import {
-  CryptocurrciesPage,
-  CryptoDetailsPage,
-  ExchangesPage,
-  HomePage,
-  NewsPage,
-} from "./pages";
+import { CryptoDetailsPage, ExchangesPage, HomePage } from "./pages";
+import { Cryptocurrcies, News } from "./components";
 import { Link } from "react-router-dom";
 import "./styles/app.css";
 
@@ -26,9 +21,12 @@ const App: FC = () => {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/exchanges" element={<ExchangesPage />} />
-              <Route path="/cryptocurrcies" element={<CryptocurrciesPage />} />
+              <Route
+                path="/cryptocurrcies"
+                element={<Cryptocurrcies simpliFied={false} />}
+              />
               <Route path="/crypto/:coinId" element={<CryptoDetailsPage />} />
-              <Route path="/news" element={<NewsPage />} />
+              <Route path="/news" element={<News simpliFied={false} />} />
             </Routes>
           </div>
         </Layout>
